@@ -1,1 +1,52 @@
 /* 여기에 스타일을 구현해 주세요 */
+/* 요구사항 
+? 이미지 성능 최적화 고민하기
+! img 요소로 마크업
+* 아바타의 상태 정보 제공
+* 회색 원 배경색 - #DBDBDB 
+* 초록색 원 배경색 - #4CFE88
+! 아바타 이미지의 크기 - 64px * 64px
+! 아바타 이미지 간의 간격 - 20px
+* float, position을 사용하여 구현
+*/
+body {
+  margin: 20vw;
+}
+
+/* 이미지 정렬 */
+.avatar-set1 {
+  display: flex;
+}
+
+.avatar-set2 {
+  display: flex;
+}
+
+/* 이미지 스타일링 */
+img {
+  float: left;
+  position: relative;
+  padding: 20px;
+  border-radius: 100%;
+  display: block;
+  z-index: 0;
+}
+
+/* 온라인 오프라인 구분 */
+.online .circle-overlay {
+  position: absolute;
+  transform: translate(65px, 65px); /* 요소를 위치, 크기 등 시각적으로 변형할 수 있게 해줌 */
+  padding: 10px;
+  border-radius: 100%;
+  background-color: #4cfe88;
+  z-index: 1; /* z-index를 통해 이미지 위에 표시 */
+}
+
+.offline .circle-overlay {
+  position: absolute;
+  transform: translate(65px, 65px); /* 요소를 위치, 크기 등 시각적으로 변형할 수 있게 해줌 */
+  padding: 10px;
+  border-radius: 100%;
+  background-color: #dbdbdb;
+  z-index: 1; /* z-index를 통해 이미지 위에 표시 */
+}
