@@ -1,1 +1,148 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+body {
+  font-size: 16px;
+  color: #121212;
+  box-sizing: border-box;
+
+  /* 많은 오류를 범하여 일단 보류 상태로 진행
+  @media (max-width: 767px) {
+    width 100%를 하면 왜 오른쪽 끝에 붙는지 이유를 찾아야함
+    width: 100%;
+    padding-inline: 20px;
+
+    .ip-security {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 500px;
+    padding-inline: 20px;
+    margin-inline: auto;
+
+    .ip-security {
+      display: flex;
+    }
+  } */
+}
+
+/* logo */
+.logo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.125rem;
+}
+
+/* form
+form {
+  에러 처리는 어떻게 해야하는가...?
+  .error-message {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-bottom: 1.25rem;
+  }
+} */
+
+/* 로그인, 비밀번호 input */
+.input {
+  border: 1px solid #dadada;
+  background: #fff;
+  padding: 0.75rem;
+  position: relative;
+  font-size: 14px;
+  margin-bottom: 0.625rem;
+
+  /* 선택 됐을 경우 */
+  &:focus-within {
+    border: 1px solid #03cf5d;
+    background: #e9f0fd;
+  }
+  label {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 0.875rem;
+    translate: 0 -50%;
+  }
+
+  input {
+    inline-size: 100%;
+    border: 0 none;
+    background: transparent;
+    outline: none;
+  }
+}
+
+/* 로그인 버튼 */
+.login-button {
+  font-size: 16px;
+  height: 2.8125rem;
+  color: #fff;
+  background: #03cf5d;
+  margin-top: 1.25rem;
+  border: 0 none;
+  inline-size: 100%;
+}
+
+.bottom-div {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 0.3125rem;
+  position: relative;
+  inline-size: 100%;
+  justify-content: space-between;
+
+  .login-state-checkbox {
+    align-items: start;
+
+    span {
+      margin-left: 0.3125rem;
+      position: absolute;
+    }
+  }
+
+  /* input checkbox 안보이게 하기 */
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  /* 체크 되지 않으면 .unchecked 표시, .checked는 숨김 */
+  label .unchecked,
+  label .switch-off {
+    display: inline;
+  }
+  label .checked,
+  label .switch-on {
+    display: none;
+  }
+
+  /* 체크되면 .checked 표시, .unchecked는 숨김 */
+  input[type='checkbox']:checked + label .unchecked,
+  input[type='checkbox']:checked + label .switch-off {
+    display: none;
+  }
+  input[type='checkbox']:checked + label .checked,
+  input[type='checkbox']:checked + label .switch-on {
+    display: inline;
+    color: #03cf5d;
+  }
+
+  .ip-link {
+    background: #fff;
+    border: 0 none;
+    font-size: 16px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .ip-link:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .switch-off {
+    color: gray;
+  }
+}
